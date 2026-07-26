@@ -5,11 +5,11 @@ output = "assets/sysinfo.svg"
 
 
 rows = [
-    ("role", "Software Engineer"),
-    ("focus", "Generative AI + Automation"),
-    ("stack", "Python | React | Django"),
-    ("cloud", "AWS | Docker | Linux"),
-    ("ai", "LLMs | AI Agents | RAG"),
+    ("role", "AI Engineer"),
+    ("focus", "LLMs | Agents | RAG"),
+    ("stack", "Python | TypeScript | React"),
+    ("runtime", "FastAPI | Docker | Linux"),
+    ("ops", "Tracing | Eval | GitHub Actions"),
     ("location", "Bengaluru, India")
 ]
 

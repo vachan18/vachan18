@@ -3,7 +3,7 @@
 <h1>vachan18@living-terminal</h1>
 
 <p>
-	<code>AI Engineer</code> · <code>Automation Builder</code> · <code>Systems Thinker</code>
+	<code>AI Engineer</code> · <code>LLM Builder</code> · <code>Automation Engineer</code>
 </p>
 
 <pre>
@@ -11,7 +11,13 @@ $ uname -a
 vachan18 | AI Engineer | Bengaluru, India
 
 $ status
-building living interfaces, automation systems, and AI products
+building agentic products, evaluation loops, and intelligent automation
+
+$ stack
+python / typescript / react / fastapi / docker
+
+$ mission
+ship useful AI systems with traces, feedback, and measurable quality
 </pre>
 
 <pre>
