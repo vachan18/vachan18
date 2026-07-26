@@ -1,23 +1,43 @@
 <div align="center">
 
-<h1>vachan18</h1>
+<h1>vachan18@living-terminal</h1>
 
-<h3>
-<code>$ whoami</code>
-</h3>
+<p>
+	<code>AI Engineer</code> · <code>Automation Builder</code> · <code>Systems Thinker</code>
+</p>
 
-<img src="./assets/portrait.svg" width="350"/>
+<pre>
+┌─[ whoami ]────────────────────────────────────────────────────┐
+│                                                               │
+│  avatar                                                        │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+
+<img src="./assets/portrait.svg" width="350" alt="Animated ASCII portrait"/>
 
 <br>
 
-<img src="./assets/sysinfo.svg" width="500"/>
+<pre>
+┌─[ system.info ]───────────────────────────────────────────────┐
+│                                                               │
+│  runtime                                                       │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+
+<img src="./assets/sysinfo.svg" width="500" alt="Terminal system information panel"/>
 
 <br><br>
 
-<h3>
-<code>$ cat contributions.log</code>
-</h3>
+<pre>
+┌─[ cat contributions.log ]─────────────────────────────────────┐
+│                                                               │
+│  activity                                                      │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+</pre>
 
-<img src="./assets/graph.svg" width="850"/>
+<img src="./assets/graph.svg" width="850" alt="Animated contribution graph"/>
 
 </div>
