@@ -1,43 +1,43 @@
 <div align="center">
 
 <p>
-	<code>available for senior software engineering, AI, and automation roles</code>
+  <code>AI Software Engineer | Generative AI Engineer | Backend Engineer</code>
 </p>
 
 <h1>Vachan U S</h1>
 
 <p>
-	<strong>Software Engineer | AI & Automation Engineer</strong>
+	<strong>AI Software Engineer building LLM-powered products, backend systems, and automation workflows</strong>
 </p>
 
 <p>
-	<code>Generative AI</code> · <code>AI Agents</code> · <code>LLM Applications</code> · <code>Automation</code> · <code>Full Stack Development</code>
+	<code>LLM APIs</code> · <code>Prompt Engineering</code> · <code>AI Agents</code> · <code>RAG</code> · <code>CrewAI</code> · <code>Automation</code>
 </p>
 
 <pre>
 $ uname -a
-vachan18 | Software Engineer | AI & Automation Engineer
+vachan18 | AI Software Engineer | Bengaluru, India
 
 $ status
-designing AI-native products, automation systems, and production-grade software
+designing AI-native products, backend systems, and measurable automation
 
 $ stack
-python / typescript / react / fastapi / docker
+python / react / django / flask / aws / docker / linux
 
 $ mission
-ship useful AI systems with traces, feedback, and measurable quality
+ship recruiter-friendly AI software that is useful, reliable, and production-ready
 </pre>
 
 <p>
-	<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=860&lines=Generative+AI+%7C+AI+Agents+%7C+LLM+Applications;Automation+Engineering+%7C+Full+Stack+Delivery;Building+reliable+AI+products+for+real+teams" alt="Typing effect" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=860&lines=AI+Software+Engineer;Generative+AI+Engineer;Backend+Engineer+with+LLMs+and+Automation;Building+production-ready+AI+products" alt="Typing effect" />
 </p>
 
 <pre>
 ┌─[ whoami ]────────────────────────────────────────────────────┐
 │  name:    Vachan U S                                           │
-│  role:    Software Engineer | AI & Automation Engineer        │
-│  focus:   Generative AI, AI Agents, LLM Apps, Automation      │
-│  profile: senior, product-minded, recruiter-friendly          │
+│  role:    AI Software Engineer                                │
+│  focus:   LLM APIs, AI Agents, RAG, Backend Systems           │
+│  profile: recruiter-friendly, product-minded, production-first │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
@@ -47,9 +47,9 @@ ship useful AI systems with traces, feedback, and measurable quality
 
 <pre>
 ┌─[ system.info ]───────────────────────────────────────────────┐
-│  runtime:  AI engineer workspace                               │
-│  stack:    Python, TypeScript, React, FastAPI, Docker          │
-│  ops:      tracing, eval, GitHub Actions                       │
+│  runtime:  AI software engineering workspace                   │
+│  stack:    Python, React, Django, Flask, SQL                   │
+│  cloud:    AWS, Docker, Linux                                  │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
@@ -60,27 +60,27 @@ ship useful AI systems with traces, feedback, and measurable quality
 <pre>
 $ cat projects.log
 
-[01] HireLens AI  -> multi-agent resume and rejection analysis platform
-[02] AgroVision   -> crop health intelligence dashboard for real-world signal tracking
-[03] StudyMind AI -> learning assistant with summarization, flashcards, and quizzes
+[01] HireLens AI                 -> multi-agent AI job analyzer
+[02] AgroVision AI Dashboard     -> crop intelligence and monitoring platform
+[03] AI Pesticide Spraying Robot -> computer vision and robotics automation
+[04] StudyMind AI Assistant      -> learning assistant with summarization and quiz generation
+[05] Expense Tracker + LLM       -> smart personal finance insights and automation
 </pre>
 
 <pre>
 $ cat skills.json
 {
-	"languages": ["Python", "TypeScript", "JavaScript"],
-	"frontend": ["React", "HTML", "CSS"],
-	"backend": ["FastAPI", "Django", "Flask"],
-	"ai": ["Generative AI", "LLM Applications", "AI Agents", "RAG"],
-	"devops": ["Docker", "GitHub Actions", "Linux"],
-	"focus": "AI engineering, automation, and full stack product delivery"
+	"ai": ["LLM APIs", "Prompt Engineering", "AI Agents", "RAG", "CrewAI", "Automation"],
+	"software": ["Python", "React", "Django", "Flask", "REST APIs", "SQL"],
+	"cloud": ["AWS", "Docker", "Linux"],
+	"target_roles": ["AI Engineer", "Generative AI Engineer", "Software Engineer", "Backend Engineer"]
 }
 </pre>
 
 <pre>
 ┌─[ contribution.status ]───────────────────────────────────────┐
 │  live:   daily updates                                          │
-│  signal: production-focused contribution activity               │
+│  signal: production-focused AI engineering activity            │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
