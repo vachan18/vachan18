@@ -109,12 +109,40 @@ ship recruiter-friendly AI software that is useful, reliable, and production-rea
 
 <pre>
 $ cat skills.json
-{
-	"ai": ["LLM APIs", "Prompt Engineering", "AI Agents", "RAG", "CrewAI", "Automation"],
-	"software": ["Python", "React", "Django", "Flask", "REST APIs", "SQL"],
-	"cloud": ["AWS", "Docker", "Linux"],
-	"target_roles": ["AI Engineer", "Generative AI Engineer", "Software Engineer", "Backend Engineer"]
-}
+
+AI ENGINEERING
+-------------
+LLMs
+Generative AI
+AI Agents
+RAG
+Prompt Engineering
+CrewAI
+OpenAI API
+Claude API
+Groq API
+
+BACKEND
+-------------
+Python
+Django
+Flask
+REST API
+SQL
+
+FRONTEND
+-------------
+React
+JavaScript
+HTML
+CSS
+
+CLOUD & DEVOPS
+-------------
+AWS
+Docker
+Linux
+GitHub Actions
 </pre>
 
 <pre>
