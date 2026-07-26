@@ -1,0 +1,155 @@
+from __future__ import annotations
+
+import collections
+import datetime as dt
+import subprocess
+from pathlib import Path
+
+
+OUTPUT = Path("assets/graph.svg")
+BG = "#0b1117"
+FRAME = "#15311f"
+TEXT = "#8bffb0"
+PALETTE = ["#0e4429", "#006d32", "#26a641", "#39d353", "#9be9a8"]
+
+
+def git_commit_counts() -> dict[str, int]:
+    command = [
+        "git",
+        "log",
+        "--since=365 days ago",
+        "--date=short",
+        "--format=%ad",
+    ]
+    result = subprocess.run(command, check=True, capture_output=True, text=True)
+    counts: dict[str, int] = collections.defaultdict(int)
+    for line in result.stdout.splitlines():
+        counts[line.strip()] += 1
+    return counts
+
+
+def level_for(count: int, maximum: int) -> int:
+    if count <= 0:
+        return 0
+    if maximum <= 1:
+        return 1
+    ratio = count / maximum
+    if ratio < 0.25:
+        return 1
+    if ratio < 0.5:
+        return 2
+    if ratio < 0.75:
+        return 3
+    return 4
+
+
+def build_svg() -> str:
+    today = dt.date.today()
+    start = today - dt.timedelta(days=364)
+    counts = git_commit_counts()
+
+    dates: list[dt.date] = [start + dt.timedelta(days=offset) for offset in range(365)]
+    maximum = max(counts.values(), default=0)
+
+    cell = 14
+    gap = 4
+    offset_x = 42
+    offset_y = 92
+    width = offset_x + 53 * (cell + gap) + 24
+    height = 242
+    title = f"{sum(counts.values())} commits in the last year"
+
+    month_labels = []
+    seen_months: set[tuple[int, int]] = set()
+    for current_date in dates:
+        if current_date.day != 1:
+            continue
+        marker = (current_date.year, current_date.month)
+        if marker in seen_months:
+            continue
+        seen_months.add(marker)
+        week_index = ((current_date - start).days) // 7
+        x = offset_x + week_index * (cell + gap)
+        month_labels.append(
+            f'<text x="{x}" y="70" font-family="monospace" font-size="11" fill="#5f7f6e">{current_date.strftime("%b")}</text>'
+        )
+
+    day_labels = []
+    for label, row in [("Sun", 0), ("Mon", 1), ("Tue", 2), ("Wed", 3), ("Thu", 4), ("Fri", 5), ("Sat", 6)]:
+        y = offset_y + row * (cell + gap) + 12
+        if row not in (0, 2, 4, 6):
+            continue
+        day_labels.append(
+            f'<text x="10" y="{y}" font-family="monospace" font-size="10" fill="#5f7f6e">{label}</text>'
+        )
+
+    cells = []
+    for index, current_date in enumerate(dates):
+        week_index = ((current_date - start).days) // 7
+        row = current_date.weekday() + 1
+        if row == 7:
+            row = 0
+        x = offset_x + week_index * (cell + gap)
+        y = offset_y + row * (cell + gap)
+        count = counts.get(current_date.isoformat(), 0)
+        level = level_for(count, maximum)
+        fill = PALETTE[level]
+        delay = index * 0.01
+        cells.append(
+            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" fill="{fill}" opacity="0">'
+            f'<animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="{delay:.2f}s" fill="freeze" />'
+            f'</rect>'
+        )
+
+    legend = []
+    legend_x = width - 108
+    legend_y = 64
+    for index, color in enumerate(PALETTE):
+        x = legend_x + index * 18
+        legend.append(f'<rect x="{x}" y="{legend_y}" width="12" height="12" rx="3" fill="{color}" />')
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Animated contribution graph">
+  <defs>
+    <linearGradient id="shell" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#13261a" />
+      <stop offset="100%" stop-color="#081015" />
+    </linearGradient>
+  </defs>
+
+  <rect width="{width}" height="{height}" rx="18" fill="#03060a" />
+  <rect x="8" y="8" width="{width - 16}" height="{height - 16}" rx="14" fill="url(#shell)" opacity="0.92" />
+  <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="{BG}" stroke="#1f3a2d" stroke-width="1.2" />
+
+  <circle cx="32" cy="28" r="5" fill="#ff5f57" />
+  <circle cx="48" cy="28" r="5" fill="#febc2e" />
+  <circle cx="64" cy="28" r="5" fill="#28c840" />
+
+  <text x="88" y="33" font-family="monospace" font-size="14" fill="{TEXT}">$ cat contributions.log</text>
+  <text x="18" y="58" font-family="monospace" font-size="11" fill="#5f7f6e">{title}</text>
+
+  {''.join(month_labels)}
+  {''.join(day_labels)}
+
+  <g shape-rendering="crispEdges">
+    {''.join(cells)}
+  </g>
+
+  {''.join(legend)}
+  <text x="{legend_x - 46}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">Less</text>
+  <text x="{legend_x + 94}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">More</text>
+
+  <rect x="18" y="{height - 18}" width="{width - 36}" height="2" fill="#2ee59d" opacity="0.35">
+    <animate attributeName="opacity" values="0.2;0.75;0.2" dur="2.4s" repeatCount="indefinite" />
+  </rect>
+</svg>
+'''
+
+
+def main() -> None:
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(build_svg(), encoding="utf-8")
+    print(f"Created: {OUTPUT}")
+
+
+if __name__ == "__main__":
+    main()
