@@ -50,14 +50,17 @@ def build_svg() -> str:
 
     dates: list[dt.date] = [start + dt.timedelta(days=offset) for offset in range(365)]
     maximum = max(counts.values(), default=0)
+    total_commits = sum(counts.values())
+    active_days = sum(1 for count in counts.values() if count > 0)
+    peak_day = max(counts.items(), key=lambda item: item[1], default=(today.isoformat(), 0))
 
     cell = 14
     gap = 4
     offset_x = 42
-    offset_y = 92
+    offset_y = 104
     width = offset_x + 53 * (cell + gap) + 24
-    height = 242
-    title = f"{sum(counts.values())} commits in the last year"
+    height = 262
+    title = f"{total_commits} commits in the last year"
 
     month_labels = []
     seen_months: set[tuple[int, int]] = set()
@@ -81,6 +84,22 @@ def build_svg() -> str:
             continue
         day_labels.append(
             f'<text x="10" y="{y}" font-family="monospace" font-size="10" fill="#5f7f6e">{label}</text>'
+        )
+
+    summary = [
+        (f"{total_commits}", "commits"),
+        (f"{active_days}", "active days"),
+        (f"{peak_day[1]}", "peak day"),
+    ]
+
+    summary_blocks = []
+    summary_x = width - 304
+    for index, (value, label) in enumerate(summary):
+        x = summary_x + index * 102
+        summary_blocks.append(
+            f'<rect x="{x}" y="44" width="94" height="28" rx="8" fill="#081015" stroke="#1f3a2d" stroke-width="1" />'
+            f'<text x="{x + 8}" y="61" font-family="monospace" font-size="12" fill="#8fffb7">{value}</text>'
+            f'<text x="{x + 8}" y="70" font-family="monospace" font-size="8" fill="#5f7f6e">{label}</text>'
         )
 
     cells = []
@@ -108,39 +127,50 @@ def build_svg() -> str:
         x = legend_x + index * 18
         legend.append(f'<rect x="{x}" y="{legend_y}" width="12" height="12" rx="3" fill="{color}" />')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Animated contribution graph">
-  <defs>
-    <linearGradient id="shell" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#13261a" />
-      <stop offset="100%" stop-color="#081015" />
-    </linearGradient>
-  </defs>
+        return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Animated contribution graph">
+    <defs>
+        <linearGradient id="shell" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#13261a" />
+            <stop offset="100%" stop-color="#081015" />
+        </linearGradient>
+        <radialGradient id="glow" cx="50%" cy="35%" r="70%">
+            <stop offset="0%" stop-color="#39d353" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="#39d353" stop-opacity="0" />
+        </radialGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="0" stdDeviation="1.3" flood-color="#39d353" flood-opacity="0.24" />
+        </filter>
+    </defs>
 
-  <rect width="{width}" height="{height}" rx="18" fill="#03060a" />
-  <rect x="8" y="8" width="{width - 16}" height="{height - 16}" rx="14" fill="url(#shell)" opacity="0.92" />
-  <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="{BG}" stroke="#1f3a2d" stroke-width="1.2" />
+    <rect width="{width}" height="{height}" rx="18" fill="#03060a" />
+    <rect x="8" y="8" width="{width - 16}" height="{height - 16}" rx="14" fill="url(#shell)" opacity="0.92" />
+    <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="{BG}" stroke="#1f3a2d" stroke-width="1.2" />
+    <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="url(#glow)" opacity="0.75" />
 
-  <circle cx="32" cy="28" r="5" fill="#ff5f57" />
-  <circle cx="48" cy="28" r="5" fill="#febc2e" />
-  <circle cx="64" cy="28" r="5" fill="#28c840" />
+    <circle cx="32" cy="28" r="5" fill="#ff5f57" />
+    <circle cx="48" cy="28" r="5" fill="#febc2e" />
+    <circle cx="64" cy="28" r="5" fill="#28c840" />
 
-  <text x="88" y="33" font-family="monospace" font-size="14" fill="{TEXT}">$ cat contributions.log</text>
-  <text x="18" y="58" font-family="monospace" font-size="11" fill="#5f7f6e">{title}</text>
+    <text x="88" y="33" font-family="monospace" font-size="14" fill="{TEXT}">$ cat contributions.log</text>
+    <text x="18" y="58" font-family="monospace" font-size="11" fill="#5f7f6e">{title}</text>
+    <text x="{width - 150}" y="33" font-family="monospace" font-size="10" fill="#5f7f6e">live.activity</text>
 
-  {''.join(month_labels)}
-  {''.join(day_labels)}
+    {''.join(summary_blocks)}
+    {''.join(month_labels)}
+    {''.join(day_labels)}
 
-  <g shape-rendering="crispEdges">
-    {''.join(cells)}
-  </g>
+    <g shape-rendering="crispEdges" filter="url(#shadow)">
+        {''.join(cells)}
+    </g>
 
-  {''.join(legend)}
-  <text x="{legend_x - 46}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">Less</text>
-  <text x="{legend_x + 94}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">More</text>
+    {''.join(legend)}
+    <text x="{legend_x - 46}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">Less</text>
+    <text x="{legend_x + 94}" y="74" font-family="monospace" font-size="10" fill="#5f7f6e">More</text>
+    <text x="18" y="{height - 30}" font-family="monospace" font-size="10" fill="#5f7f6e">auto-updated from git history · peak {peak_day[0]}</text>
 
-  <rect x="18" y="{height - 18}" width="{width - 36}" height="2" fill="#2ee59d" opacity="0.35">
-    <animate attributeName="opacity" values="0.2;0.75;0.2" dur="2.4s" repeatCount="indefinite" />
-  </rect>
+    <rect x="18" y="{height - 18}" width="{width - 36}" height="2" fill="#2ee59d" opacity="0.35">
+        <animate attributeName="opacity" values="0.2;0.75;0.2" dur="2.4s" repeatCount="indefinite" />
+    </rect>
 </svg>
 '''
 

@@ -7,6 +7,14 @@
 </p>
 
 <pre>
+$ uname -a
+vachan18 | AI Engineer | Bengaluru, India
+
+$ status
+building living interfaces, automation systems, and AI products
+</pre>
+
+<pre>
 ┌─[ whoami ]────────────────────────────────────────────────────┐
 │                                                               │
 │  avatar                                                        │
