@@ -1,7 +1,7 @@
 <div align="center">
 
 <p>
-  <code>AI Software Engineer | Generative AI | Backend Systems</code>
+<code>AI SOFTWARE ENGINEER | GENERATIVE AI | INTELLIGENT SYSTEMS</code>
 </p>
 
 <h1>
@@ -10,60 +10,72 @@ Vachan U S
 
 <p>
 <strong>
-Building LLM-powered applications, AI automation workflows, and scalable software systems.
+Engineering AI-powered applications, automation systems, and scalable backend solutions.
 </strong>
 </p>
 
 <p>
-<code>LLMs</code> · 
-<code>AI Agents</code> · 
-<code>RAG</code> · 
-<code>CrewAI</code> · 
-<code>Automation</code> · 
-<code>Backend Engineering</code>
+<code>LLMs</code> ·
+<code>AI Agents</code> ·
+<code>RAG</code> ·
+<code>Automation</code> ·
+<code>Backend</code> ·
+<code>Cloud</code>
 </p>
 
 
-<img src="./assets/dev-dashboard.svg" width="1000" alt="AI Engineer Dashboard"/>
+<img src="./assets/dev-dashboard.svg" width="1000" />
 
 
 <br>
 
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=850&lines=AI+Software+Engineer;Generative+AI+Developer;LLM+Application+Builder;Backend+Systems+Engineer;Automation+Enthusiast" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=850&lines=AI+Software+Engineer;Building+LLM+Applications;Designing+AI+Automation+Systems;Developing+Backend+Infrastructure" />
 
 
 <br><br>
 
 
-# 🧑‍💻 Developer Profile
+# 🖥️ $ whoami
 
 
-<img src="./assets/portrait.svg" width="350" alt="Animated ASCII Portrait"/>
+<img src="./assets/portrait.svg" width="350"/>
 
 
 <br>
-
-
-<img src="./assets/sysinfo.svg" width="500" alt="System Information"/>
-
-
-<br><br>
-
-
-# 🧠 Technical Focus
 
 
 ```
-$ skills.json
+identity:
+
+name        : Vachan U S
+role        : AI Software Engineer
+location    : Bengaluru, India
+
+mission:
+building reliable AI systems that transform ideas into products
+```
 
 
-AI ENGINEERING
---------------
+<br>
+
+
+<img src="./assets/sysinfo.svg" width="500"/>
+
+
+<br><br>
+
+
+# 🧬 $ neural.stack
+
+
+```
+Artificial Intelligence
+-----------------------
 LLM Applications
 Generative AI
 AI Agents
-RAG Systems
+RAG Pipelines
 Prompt Engineering
 CrewAI
 OpenAI API
@@ -71,95 +83,145 @@ Claude API
 Groq API
 
 
-BACKEND ENGINEERING
--------------------
+Software Engineering
+--------------------
 Python
 Django
 Flask
 REST APIs
 SQL
-
-
-FRONTEND
---------
 React
-JavaScript
-HTML
-CSS
 
 
-CLOUD & DEVOPS
+Infrastructure
 --------------
 AWS
 Docker
 Linux
 GitHub Actions
+CI/CD
 ```
 
 
 <br>
 
 
-# 🚀 Currently Building
+# ⚙️ $ runtime.env
 
 
 ```
-$ current.status
+environment:
+
+language:
+  Python
+  JavaScript
+
+frameworks:
+  Django
+  Flask
+  React
+
+cloud:
+  AWS
+
+tools:
+  Git
+  Docker
+  Linux
+
+
+status:
+  building production-ready AI applications
+```
+
+
+<br>
+
+
+# 📡 $ build.log
+
+
+```
+[2026]
+
+✓ Developed LLM-powered applications
+
+✓ Built AI automation workflows
+
+✓ Integrated multiple AI model APIs
+
+✓ Designed backend systems and APIs
+
+✓ Worked with cloud deployment workflows
+
+✓ Published AI-based research work
+```
+
+
+<br>
+
+
+# 🔮 $ learning.queue
+
+
+```
+CURRENTLY EXPLORING:
+
+
+01 → AI Agent Architectures
+
+02 → Retrieval Augmented Generation (RAG)
+
+03 → LLM Application Scaling
+
+04 → Cloud Native Systems
+
+05 → Intelligent Automation
+```
+
+
+<br>
+
+
+# 📊 $ system.metrics
+
+
+```
+developer_profile:
 
 
 focus:
-→ AI-powered software systems
+AI Engineering
 
 
-exploring:
-→ AI Agents
-→ Retrieval Augmented Generation
-→ Cloud Architecture
-→ Automation Workflows
+specialization:
+Generative AI + Backend Systems
 
 
-goal:
-→ Build reliable production-ready AI applications
+engineering_style:
+Product-focused
+Production-minded
+Automation-driven
+
+
+objective:
+Create useful intelligent software
 ```
 
 
 <br>
 
 
-# 🏆 Experience & Highlights
+# 📈 $ contribution.stream
 
 
-```
-$ achievements
-
-
-✓ Junior Software Engineer @ Synapx
-
-✓ Generative AI Application Development
-
-✓ LLM API Integration Experience
-
-✓ AI Automation Workflow Development
-
-✓ AWS Cloud Deployment Experience
-
-✓ Research Publication in AI-based Automation
-```
+<img src="./assets/graph.svg" width="850"/>
 
 
 <br>
 
 
-# 📈 Contribution Activity
-
-
-<img src="./assets/graph.svg" width="850" alt="Animated Contribution Graph"/>
-
-
-<br>
-
-
-# 📫 Connect With Me
+# 🌐 $ connect
 
 
 <p>
@@ -170,12 +232,12 @@ $ achievements
 
 
 <a href="YOUR_PORTFOLIO_LINK">
-<img src="https://img.shields.io/badge/Portfolio-Visit-black?style=for-the-badge&logo=vercel"/>
+<img src="https://img.shields.io/badge/Portfolio-Explore-black?style=for-the-badge&logo=vercel"/>
 </a>
 
 
 <a href="mailto:vachanus@gmail.com">
-<img src="https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail"/>
+<img src="https://img.shields.io/badge/Email-Reach-red?style=for-the-badge&logo=gmail"/>
 </a>
 
 </p>
@@ -185,7 +247,7 @@ $ achievements
 
 
 <h3>
-⭐ Building AI. Writing Code. Creating Impact.
+⚡ Building intelligent systems, one commit at a time.
 </h3>
 
 
