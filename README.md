@@ -34,9 +34,10 @@ ship useful AI systems with traces, feedback, and measurable quality
 
 <pre>
 ┌─[ whoami ]────────────────────────────────────────────────────┐
-│                                                               │
-│  avatar                                                        │
-│                                                               │
+│  name:    Vachan U S                                           │
+│  role:    Software Engineer | AI & Automation Engineer        │
+│  focus:   Generative AI, AI Agents, LLM Apps, Automation      │
+│  profile: senior, product-minded, recruiter-friendly          │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
@@ -46,9 +47,9 @@ ship useful AI systems with traces, feedback, and measurable quality
 
 <pre>
 ┌─[ system.info ]───────────────────────────────────────────────┐
-│                                                               │
-│  runtime                                                       │
-│                                                               │
+│  runtime:  AI engineer workspace                               │
+│  stack:    Python, TypeScript, React, FastAPI, Docker          │
+│  ops:      tracing, eval, GitHub Actions                       │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
@@ -57,10 +58,29 @@ ship useful AI systems with traces, feedback, and measurable quality
 <br><br>
 
 <pre>
-┌─[ cat contributions.log ]─────────────────────────────────────┐
-│                                                               │
-│  activity                                                      │
-│                                                               │
+$ cat projects.log
+
+[01] HireLens AI  -> multi-agent resume and rejection analysis platform
+[02] AgroVision   -> crop health intelligence dashboard for real-world signal tracking
+[03] StudyMind AI -> learning assistant with summarization, flashcards, and quizzes
+</pre>
+
+<pre>
+$ cat skills.json
+{
+	"languages": ["Python", "TypeScript", "JavaScript"],
+	"frontend": ["React", "HTML", "CSS"],
+	"backend": ["FastAPI", "Django", "Flask"],
+	"ai": ["Generative AI", "LLM Applications", "AI Agents", "RAG"],
+	"devops": ["Docker", "GitHub Actions", "Linux"],
+	"focus": "AI engineering, automation, and full stack product delivery"
+}
+</pre>
+
+<pre>
+┌─[ contribution.status ]───────────────────────────────────────┐
+│  live:   daily updates                                          │
+│  signal: production-focused contribution activity               │
 └───────────────────────────────────────────────────────────────┘
 </pre>
 
