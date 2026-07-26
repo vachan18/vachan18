@@ -14,6 +14,8 @@
 	<code>LLM APIs</code> · <code>Prompt Engineering</code> · <code>AI Agents</code> · <code>RAG</code> · <code>CrewAI</code> · <code>Automation</code>
 </p>
 
+<img src="./assets/dev-dashboard.svg" width="1100" alt="AI engineer dashboard showing experience, focus, learning, and tech focus"/>
+
 <pre>
 $ uname -a
 vachan18 | AI Software Engineer | Bengaluru, India
