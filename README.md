@@ -1,17 +1,25 @@
 <div align="center">
 
-<h1>vachan18@living-terminal</h1>
+<p>
+	<code>available for senior software engineering, AI, and automation roles</code>
+</p>
+
+<h1>Vachan U S</h1>
 
 <p>
-	<code>AI Engineer</code> · <code>LLM Builder</code> · <code>Automation Engineer</code>
+	<strong>Software Engineer | AI & Automation Engineer</strong>
+</p>
+
+<p>
+	<code>Generative AI</code> · <code>AI Agents</code> · <code>LLM Applications</code> · <code>Automation</code> · <code>Full Stack Development</code>
 </p>
 
 <pre>
 $ uname -a
-vachan18 | AI Engineer | Bengaluru, India
+vachan18 | Software Engineer | AI & Automation Engineer
 
 $ status
-building agentic products, evaluation loops, and intelligent automation
+designing AI-native products, automation systems, and production-grade software
 
 $ stack
 python / typescript / react / fastapi / docker
@@ -19,6 +27,10 @@ python / typescript / react / fastapi / docker
 $ mission
 ship useful AI systems with traces, feedback, and measurable quality
 </pre>
+
+<p>
+	<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=860&lines=Generative+AI+%7C+AI+Agents+%7C+LLM+Applications;Automation+Engineering+%7C+Full+Stack+Delivery;Building+reliable+AI+products+for+real+teams" alt="Typing effect" />
+</p>
 
 <pre>
 ┌─[ whoami ]────────────────────────────────────────────────────┐
