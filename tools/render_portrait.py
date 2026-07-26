@@ -149,9 +149,9 @@ def build_svg(lines: list[str]) -> str:
   <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="{BG}" stroke="#1f3a2d" stroke-width="1.2" />
   <rect x="14" y="14" width="{width - 28}" height="{height - 28}" rx="10" fill="url(#glow)" class="frame-glow" />
 
-  <circle cx="32" cy="28" r="5" fill="#ff5f57" />
-  <circle cx="48" cy="28" r="5" fill="#febc2e" />
-  <circle cx="64" cy="28" r="5" fill="#28c840" />
+  <circle cx="32" cy="28" r="5" fill="#2ee59d" />
+  <circle cx="48" cy="28" r="5" fill="#22c55e" />
+  <circle cx="64" cy="28" r="5" fill="#16a34a" />
 
   <text x="88" y="33" font-family="monospace" font-size="14" fill="#8fffb7">$ whoami</text>
   <text x="{width - 126}" y="33" font-family="monospace" font-size="10" fill="#5f7f6e">portrait.local</text>

@@ -94,9 +94,9 @@ def build_svg() -> str:
     <rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="72" rx="22" fill="#0d1324" />
     <rect x="{panel_x}" y="{panel_y + 42}" width="{panel_w}" height="30" fill="#0d1324" />
 
-    <circle cx="58" cy="62" r="8" fill="#ef4444" />
-    <circle cx="86" cy="62" r="8" fill="#f59e0b" />
-    <circle cx="114" cy="62" r="8" fill="#22c55e" />
+    <circle cx="58" cy="62" r="8" fill="#2ee59d" />
+    <circle cx="86" cy="62" r="8" fill="#22c55e" />
+    <circle cx="114" cy="62" r="8" fill="#16a34a" />
 
     <text x="160" y="66" font-family="monospace" font-size="28" font-weight="700" fill="#2ee59d">$ system.info</text>
     <text x="160" y="86" font-family="monospace" font-size="14" fill="#94a3b8">typewriter-driven snapshot of the local engineering stack</text>

@@ -1,12 +1,10 @@
 <div align="center">
 
 <p>
-<code>AI SOFTWARE ENGINEER | GENERATIVE AI | INTELLIGENT SYSTEMS</code>
+<code>AI SOFTWARE ENGINEER | GENERATIVE AI | LLM APPLICATIONS</code>
 </p>
 
-<h1>
-Vachan U S
-</h1>
+<h1>Vachan U S</h1>
 
 <p>
 <strong>
@@ -24,13 +22,13 @@ Engineering AI-powered applications, automation systems, and scalable backend so
 </p>
 
 
-<img src="./assets/dev-dashboard.svg" width="1000" />
+<img src="./assets/dev-dashboard.svg" width="1000" alt="AI engineer dashboard" />
 
 
 <br>
 
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=850&lines=AI+Software+Engineer;Building+LLM+Applications;Designing+AI+Automation+Systems;Developing+Backend+Infrastructure" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=850&lines=AI+Software+Engineer;Building+LLM+Applications;Designing+AI+Automation+Systems;Developing+Backend+Infrastructure" alt="Typing animation" />
 
 
 <br><br>
@@ -39,28 +37,29 @@ Engineering AI-powered applications, automation systems, and scalable backend so
 # 🖥️ $ whoami
 
 
-<img src="./assets/portrait.svg" width="350"/>
+<img src="./assets/portrait.svg" width="350" alt="Animated ASCII portrait" />
 
 
 <br>
 
 
-```
+<pre>
 identity:
 
 name        : Vachan U S
-role        : AI Software Engineer
+role        : Junior Software Engineer
+speciality  : AI Engineering & LLM Applications
 location    : Bengaluru, India
 
 mission:
 building reliable AI systems that transform ideas into products
-```
+</pre>
 
 
 <br>
 
 
-<img src="./assets/sysinfo.svg" width="500"/>
+<img src="./assets/sysinfo.svg" width="500" alt="System information panel" />
 
 
 <br><br>
@@ -69,21 +68,25 @@ building reliable AI systems that transform ideas into products
 # 🧬 $ neural.stack
 
 
-```
-Artificial Intelligence
------------------------
+<pre>
+
+AI ENGINEERING
+--------------
 LLM Applications
 Generative AI
 AI Agents
 RAG Pipelines
+Embeddings
+Vector Databases
 Prompt Engineering
+LangChain
 CrewAI
 OpenAI API
 Claude API
 Groq API
 
 
-Software Engineering
+SOFTWARE ENGINEERING
 --------------------
 Python
 Django
@@ -91,16 +94,18 @@ Flask
 REST APIs
 SQL
 React
+JavaScript
 
 
-Infrastructure
+INFRASTRUCTURE
 --------------
 AWS
 Docker
 Linux
 GitHub Actions
 CI/CD
-```
+
+</pre>
 
 
 <br>
@@ -109,20 +114,24 @@ CI/CD
 # ⚙️ $ runtime.env
 
 
-```
+<pre>
+
 environment:
 
-language:
+languages:
   Python
   JavaScript
+
 
 frameworks:
   Django
   Flask
   React
 
+
 cloud:
   AWS
+
 
 tools:
   Git
@@ -132,7 +141,8 @@ tools:
 
 status:
   building production-ready AI applications
-```
+
+</pre>
 
 
 <br>
@@ -141,7 +151,8 @@ status:
 # 📡 $ build.log
 
 
-```
+<pre>
+
 [2026]
 
 ✓ Developed LLM-powered applications
@@ -155,7 +166,8 @@ status:
 ✓ Worked with cloud deployment workflows
 
 ✓ Published AI-based research work
-```
+
+</pre>
 
 
 <br>
@@ -164,7 +176,8 @@ status:
 # 🔮 $ learning.queue
 
 
-```
+<pre>
+
 CURRENTLY EXPLORING:
 
 
@@ -177,7 +190,8 @@ CURRENTLY EXPLORING:
 04 → Cloud Native Systems
 
 05 → Intelligent Automation
-```
+
+</pre>
 
 
 <br>
@@ -186,7 +200,8 @@ CURRENTLY EXPLORING:
 # 📊 $ system.metrics
 
 
-```
+<pre>
+
 developer_profile:
 
 
@@ -206,7 +221,39 @@ Automation-driven
 
 objective:
 Create useful intelligent software
-```
+
+</pre>
+
+
+<br>
+
+
+# 🛰️ $ mission.control
+
+
+<pre>
+
+primary_objective:
+
+→ Build intelligent software systems using AI
+
+
+active_focus:
+
+→ AI Agents
+→ LLM Applications
+→ Retrieval Augmented Generation
+→ Automation Workflows
+→ Cloud-based Systems
+
+
+engineering_principles:
+
+→ Reliable
+→ Scalable
+→ Production-ready
+
+</pre>
 
 
 <br>
@@ -215,7 +262,7 @@ Create useful intelligent software
 # 📈 $ contribution.stream
 
 
-<img src="./assets/graph.svg" width="850"/>
+<img src="./assets/graph.svg" width="850" alt="Animated contribution graph" />
 
 
 <br>
@@ -226,18 +273,20 @@ Create useful intelligent software
 
 <p>
 
-<a href="YOUR_LINKEDIN_LINK">
-<img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin"/>
+<a href="https://www.linkedin.com/in/vachan-u-s-0a5aa8128/">
+LinkedIn
 </a>
 
+&nbsp;|&nbsp;
 
-<a href="YOUR_PORTFOLIO_LINK">
-<img src="https://img.shields.io/badge/Portfolio-Explore-black?style=for-the-badge&logo=vercel"/>
+<a href="https://portfolio-app.ai.studio">
+Portfolio
 </a>
 
+&nbsp;|&nbsp;
 
 <a href="mailto:vachanus@gmail.com">
-<img src="https://img.shields.io/badge/Email-Reach-red?style=for-the-badge&logo=gmail"/>
+Email
 </a>
 
 </p>
