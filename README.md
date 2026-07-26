@@ -58,14 +58,54 @@ ship recruiter-friendly AI software that is useful, reliable, and production-rea
 <br><br>
 
 <pre>
-$ cat projects.log
-
-[01] HireLens AI                 -> multi-agent AI job analyzer
-[02] AgroVision AI Dashboard     -> crop intelligence and monitoring platform
-[03] AI Pesticide Spraying Robot -> computer vision and robotics automation
-[04] StudyMind AI Assistant      -> learning assistant with summarization and quiz generation
-[05] Expense Tracker + LLM       -> smart personal finance insights and automation
+┌─[ project: HireLens AI ]──────────────────────────────────────┐
+│ description: multi-agent AI job analyzer                      │
+│ problem solved: automates resume screening and job-fit review │
+│ tech stack: Python, Streamlit, CrewAI, LLM APIs                │
+│ key features: multi-agent orchestration, analysis dashboard   │
+└───────────────────────────────────────────────────────────────┘
 </pre>
+<p><a href="https://github.com/vachan18/HirelensAi">GitHub repository</a></p>
+
+<pre>
+┌─[ project: AgroVision AI Dashboard ]─────────────────────────┐
+│ description: crop intelligence and monitoring platform        │
+│ problem solved: turns field data into actionable crop insight │
+│ tech stack: Python, Flask, React, SQL, AWS                    │
+│ key features: monitoring dashboard, field visibility, alerts  │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+<p><a href="https://github.com/vachan18?tab=repositories&q=AgroVision&type=public">GitHub repository</a></p>
+
+<pre>
+┌─[ project: AI Pesticide Robot ]───────────────────────────────┐
+│ description: computer vision and robotics automation system   │
+│ problem solved: supports targeted spraying with smart sensing │
+│ tech stack: Python, Flask, React, IoT, computer vision        │
+│ key features: automation workflow, detection, spray control   │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+<p><a href="https://github.com/vachan18?tab=repositories&q=pesticide&type=public">GitHub repository</a></p>
+
+<pre>
+┌─[ project: StudyMind AI ]─────────────────────────────────────┐
+│ description: learning assistant with summarization and quiz   │
+│ problem solved: converts long study material into usable aids │
+│ tech stack: Python, React, Flask, LLM APIs, SQL               │
+│ key features: summarization, flashcards, quiz generation      │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+<p><a href="https://github.com/vachan18/StudyMind">GitHub repository</a></p>
+
+<pre>
+┌─[ project: Expense Tracker AI ]───────────────────────────────┐
+│ description: smart personal finance and automation assistant  │
+│ problem solved: converts spending data into clear next steps  │
+│ tech stack: Python, Django, React, SQL, LLM APIs              │
+│ key features: expense insight, automation, AI summaries       │
+└───────────────────────────────────────────────────────────────┘
+</pre>
+<p><a href="https://github.com/vachan18?tab=repositories&q=expense&type=public">GitHub repository</a></p>
 
 <pre>
 $ cat skills.json
