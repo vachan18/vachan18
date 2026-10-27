@@ -129,11 +129,11 @@ def main():
         print("  Run prep_photo.py first, or pass the prepped image path.")
         sys.exit(1)
 
-    print(f"→ Converting {src} to ASCII…")
+    print(f"-> Converting {src} to ASCII...")
     lines = to_ascii(src)
     svg = build_svg(lines)
-    OUT.write_text(svg)
-    print(f"✓ Wrote {OUT}")
+    OUT.write_text(svg, encoding="utf-8")
+    print(f"[OK] Wrote {OUT}")
 
 
 if __name__ == "__main__":

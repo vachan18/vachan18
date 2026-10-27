@@ -1,0 +1,14 @@
+# Source photos
+source-photo.jpg
+source-prepped.png
+
+# Backups & temp files
+*.bak
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
