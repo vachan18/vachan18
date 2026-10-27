@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="356" viewBox="0 0 480 356">
+<defs><style>
+
+          @keyframes lineIn {
+            0%   { opacity: 0; transform: translateX(-12px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
+          .info-line {
+            opacity: 0;
+            animation: lineIn 0.35s ease-out forwards;
+          }
+        
+</style></defs>
+<rect width="480" height="356" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="20" y="33" class="info-line" style="animation-delay:0.50s" fill="#58a6ff" font-family="monospace" font-size="13" font-weight="bold">vachan18@github</text>
+<text x="20" y="55" class="info-line" style="animation-delay:0.60s" fill="#484f58" font-family="monospace" font-size="13">────────────────────────────────</text>
+<text x="20" y="77" class="info-line" style="animation-delay:0.70s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">OS</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">Linux x86_64 (Developer Edition)</tspan></text>
+<text x="20" y="99" class="info-line" style="animation-delay:0.80s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Role</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">Junior Software Engineer @ Synapx</tspan></text>
+<text x="20" y="121" class="info-line" style="animation-delay:0.90s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Education</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">B.Tech CSE · Dr. Ambedkar Inst. of Tech</tspan></text>
+<text x="20" y="143" class="info-line" style="animation-delay:1.00s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Stack</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">React · Next.js · Node.js · Python · Django</tspan></text>
+<text x="20" y="165" class="info-line" style="animation-delay:1.10s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">AI</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">LangChain · CrewAI · GenAI · Agent AI</tspan></text>
+<text x="20" y="187" class="info-line" style="animation-delay:1.20s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">DB</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">MongoDB · PostgreSQL · Firebase</tspan></text>
+<text x="20" y="209" class="info-line" style="animation-delay:1.30s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Cloud</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">AWS · GCP · Docker · Git</tspan></text>
+<text x="20" y="231" class="info-line" style="animation-delay:1.40s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Editor</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">VS Code / Cursor</tspan></text>
+<text x="20" y="253" class="info-line" style="animation-delay:1.50s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Shell</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">zsh + oh-my-zsh</tspan></text>
+<text x="20" y="275" class="info-line" style="animation-delay:1.60s" font-family="monospace" font-size="13"><tspan fill="#79c0ff">Uptime</tspan><tspan fill="#484f58"> ~ </tspan><tspan fill="#c9d1d9">Coding since 2020</tspan></text>
+<g class="info-line" style="animation-delay:1.70s">
+<rect x="20" y="307" width="22" height="14" rx="3" fill="#f85149"/>
+<rect x="46" y="307" width="22" height="14" rx="3" fill="#d29922"/>
+<rect x="72" y="307" width="22" height="14" rx="3" fill="#3fb950"/>
+<rect x="98" y="307" width="22" height="14" rx="3" fill="#58a6ff"/>
+<rect x="124" y="307" width="22" height="14" rx="3" fill="#bc8cff"/>
+<rect x="150" y="307" width="22" height="14" rx="3" fill="#f0883e"/>
+<rect x="176" y="307" width="22" height="14" rx="3" fill="#79c0ff"/>
+<rect x="202" y="307" width="22" height="14" rx="3" fill="#e3b341"/>
+</g>
+</svg>

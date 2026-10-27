@@ -1,71 +1,23 @@
 <div align="center">
 
-<p>
-<code>AI SOFTWARE ENGINEER | GENERATIVE AI | LLM APPLICATIONS</code>
-</p>
-
-<h1>Vachan U S</h1>
-
-<p>
-<strong>
-Engineering AI-powered applications, automation systems, and scalable backend solutions.
-</strong>
-</p>
-
-<p>
-<code>LLMs</code> ·
-<code>AI Agents</code> ·
-<code>RAG</code> ·
-<code>Automation</code> ·
-<code>Backend</code> ·
-<code>Cloud</code>
-</p>
-
-
-<img src="./assets/dev-dashboard.svg" width="1000" alt="AI engineer dashboard" />
-
-
-<br>
-
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=2EE59D&center=true&vCenter=true&width=850&lines=AI+Software+Engineer;Building+LLM+Applications;Designing+AI+Automation+Systems;Developing+Backend+Infrastructure" alt="Typing animation" />
-
+<h3><code>vachan@github ~ $ ./contributions.sh</code></h3>
+<img src="./contrib-heatmap.svg" width="860" />
 
 <br><br>
 
-
-#  $ contribution.stream
-
-
-<img src="./assets/graph.svg" width="850" alt="Animated contribution graph" />
-
-
-<br>
-
-
-# 🌐 $ connect
-
-<p align="center">
-<a href="https://www.linkedin.com/in/vachan-u-s-0a5aa8128/">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-</a>
-&nbsp;
-<a href="https://portfolio-app.ai.studio">
-<img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/>
-</a>
-&nbsp;
-<a href="mailto:vachanus@gmail.com">
-<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-</a>
-</p>
-
+<h3><code>vachan@github ~ $ whoami</code></h3>
+<table>
+  <tr>
+    <td valign="top"><img src="./vachan-ascii.svg" width="370" /></td>
+    <td valign="top"><img src="./info-card.svg" width="490" /></td>
+  </tr>
+</table>
 
 <br>
 
+<h3><code>vachan@github ~ $ cat /etc/socials</code></h3>
 
-<h3>
-⚡ Building intelligent systems, one commit at a time.
-</h3>
-
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/vachan18)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vachan18)
 
 </div>
