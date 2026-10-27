@@ -1,139 +1,154 @@
 #!/usr/bin/env python3
 """
-Convert source-prepped.png → vachan-ascii.svg
+Convert a portrait photo into a CLEAN, monochrome ASCII-art SVG
+that "types" itself in like a terminal, then holds.
 
-A monochrome ASCII portrait that "types" itself in row by row using
-SMIL animations inside the SVG. GitHub renders these when embedded via <img>.
-
-Each row has a horizontal clip-rect wipe (left→right) staggered top→bottom.
-Plays once and freezes — no looping.
+Matches the 840 x 880 canvas of stats.svg for equal-height side-by-side display.
 """
-
+import html
+import os
 import sys
-from pathlib import Path
+from PIL import Image, ImageEnhance, ImageFilter
 
-import numpy as np
-from PIL import Image
+HERE = os.path.dirname(os.path.abspath(__file__))
 
-ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_INPUT = ROOT / "source-prepped.png"
-OUT = ROOT / "vachan-ascii.svg"
+SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "source-prepped.png")
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "vachan-ascii.svg")
 
-# ASCII density ramp: bright (sparse) → dark (dense)
-RAMP = " .`:-=+*cs#%@"
+# Grid configuration for 840 x 880 canvas
+COLS = int(os.environ.get("COLS", 180))
+ART_W_TARGET = 800
+CELL_W = ART_W_TARGET / COLS
+CELL_H = CELL_W * 15 / 8
+ROWS = round(COLS * 8 / 15)  # 96 rows
+RAMP = " .`:-=+*cs#%@"  # bright (sparse) -> dark (dense)
 
-# Grid size
-COLS = 100
-ROWS = 53
+CONTRAST = 1.05
+BRIGHTNESS = 1.0
+GAMMA = 1.15
+SHARPEN = False
+WHITE_FLOOR = 0.82    # luminance above this is forced to blank (space)
 
-# SVG settings
-CHAR_W = 6.0     # monospace char width
-CHAR_H = 10.0    # line height
-FILL = "#b0b0b0"  # single monochrome color
+PAD = 20
+TITLEBAR_H = 30
+STATUS_H = 30
+ART_W = COLS * CELL_W
+ART_H = ROWS * CELL_H
+CANVAS_W = 840
+CANVAS_H = 880
+
 BG = "#0d1117"
+BG2 = "#111722"
+FRAME = "#30363d"
+TITLE_TEXT = "#7d8590"
+INK = "#c9d1d9"       # Andrew6rant-style single monochrome tone
+CURSOR = "#c9d1d9"
 
-# Animation
-ROW_WIPE_DURATION = 0.06   # seconds per row wipe
-ROW_STAGGER = 0.02         # seconds between row starts
-CURSOR_W = 3               # cursor block width in chars
-
-
-def to_ascii(img_path: Path) -> list[str]:
-    img = Image.open(img_path).convert("L")
-    # Resize to grid (width adjusted for char aspect ratio ~0.55)
-    img = img.resize((COLS, ROWS), Image.LANCZOS)
-    arr = np.array(img)
-
-    lines = []
-    for row in arr:
-        line = ""
-        for px in row:
-            idx = int(px / 255 * (len(RAMP) - 1))
-            line += RAMP[idx]
-        lines.append(line)
-    return lines
+# Reveal timing
+ROW_DUR = 5.8 / ROWS
+STAGGER = ROW_DUR
 
 
-def build_svg(lines: list[str]):
-    w = COLS * CHAR_W + 20
-    h = ROWS * CHAR_H + 20
-    total_anim_time = ROWS * ROW_STAGGER + ROW_WIPE_DURATION + 0.5
+def to_ascii_rows(src_path):
+    im = Image.open(src_path).convert("L")
+    if SHARPEN:
+        im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2))
+    im = ImageEnhance.Brightness(im).enhance(BRIGHTNESS)
+    im = ImageEnhance.Contrast(im).enhance(CONTRAST)
+    im = im.resize((COLS, ROWS), Image.LANCZOS)
+    px = im.load()
 
-    parts = []
-    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" '
-                 f'width="{w}" height="{h}" viewBox="0 0 {w} {h}">')
+    rows_txt = []
+    for y in range(ROWS):
+        chars = []
+        for x in range(COLS):
+            lum = px[x, y] / 255.0
+            lum = pow(lum, GAMMA)
+            if lum >= WHITE_FLOOR:
+                chars.append(" ")
+                continue
+            idx = int((1.0 - lum) * (len(RAMP) - 1) + 0.5)
+            idx = max(0, min(len(RAMP) - 1, idx))
+            chars.append(RAMP[idx])
+        rows_txt.append("".join(chars))
+    return rows_txt
 
-    # Background
-    parts.append(f'<rect width="{w}" height="{h}" fill="{BG}"/>')
 
-    # Defs: clip paths for each row
-    parts.append("<defs>")
-    for i in range(len(lines)):
-        clip_id = f"clip-row-{i}"
-        y = 6 + i * CHAR_H
-        parts.append(f'<clipPath id="{clip_id}">')
-        parts.append(f'  <rect x="0" y="{y}" width="0" height="{CHAR_H + 2}">')
-        begin = f"{i * ROW_STAGGER:.3f}s"
-        parts.append(f'    <animate attributeName="width" '
-                     f'from="0" to="{w}" '
-                     f'dur="{ROW_WIPE_DURATION}s" '
-                     f'begin="{begin}" fill="freeze"/>')
-        parts.append(f'  </rect>')
-        parts.append(f'</clipPath>')
-    parts.append("</defs>")
+def build_svg(rows_txt):
+    STATIC = bool(os.environ.get("STATIC"))
+    art_top = TITLEBAR_H + PAD * 0.35
 
-    # Text rows
-    for i, line in enumerate(lines):
-        clip_id = f"clip-row-{i}"
-        y = 10 + i * CHAR_H + CHAR_H
-        # Escape XML special chars
-        escaped = (line.replace("&", "&amp;")
-                       .replace("<", "&lt;")
-                       .replace(">", "&gt;")
-                       .replace('"', "&quot;"))
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS_W}" height="{CANVAS_H}" '
+        f'viewBox="0 0 {CANVAS_W} {CANVAS_H}" font-family="ui-monospace, SFMono-Regular, '
+        f'Menlo, Consolas, monospace">',
+        '<defs>',
+        f'<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">',
+        f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/>',
+        '</linearGradient></defs>',
+        f'<rect width="{CANVAS_W}" height="{CANVAS_H}" rx="12" fill="url(#bg)"/>',
+        f'<rect x="0.5" y="0.5" width="{CANVAS_W-1}" height="{CANVAS_H-1}" rx="12" fill="none" stroke="{FRAME}" stroke-width="1"/>',
+        f'<line x1="0" y1="{TITLEBAR_H}" x2="{CANVAS_W}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>',
+    ]
+
+    for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+        parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
+    parts.append(f'<text x="{CANVAS_W/2}" y="{TITLEBAR_H/2 + 4}" fill="{TITLE_TEXT}" font-size="12" '
+                 f'text-anchor="middle">vachan@github: ~$ ./portrait.sh</text>')
+
+    font_size = CELL_H * 0.86
+    for ry, line in enumerate(rows_txt):
+        y = art_top + ry * CELL_H + CELL_H * 0.74
+        row_y = art_top + ry * CELL_H
+        delay = ry * STAGGER
+        safe = html.escape(line)
+        text = (f'<text xml:space="preserve" x="{PAD}" y="{y:.1f}" fill="{INK}" '
+                f'font-size="{font_size:.1f}" textLength="{ART_W}" lengthAdjust="spacing">{safe}</text>')
+
+        if STATIC:
+            parts.append(text)
+            continue
+
         parts.append(
-            f'<text x="10" y="{y}" '
-            f'clip-path="url(#{clip_id})" '
-            f'fill="{FILL}" font-family="monospace" font-size="{CHAR_H}" '
-            f'xml:space="preserve">{escaped}</text>'
+            f'<clipPath id="r{ry}"><rect x="{PAD}" y="{row_y:.1f}" height="{CELL_H}" width="0">'
+            f'<animate attributeName="width" from="0" to="{ART_W}" begin="{delay:.3f}s" '
+            f'dur="{ROW_DUR:.2f}s" fill="freeze"/></rect></clipPath>'
+        )
+        parts.append(f'<g clip-path="url(#r{ry})">{text}</g>')
+        parts.append(
+            f'<rect y="{row_y+1:.1f}" width="{CELL_W}" height="{CELL_H-2}" fill="{CURSOR}" opacity="0">'
+            f'<animate attributeName="x" from="{PAD}" to="{PAD+ART_W}" begin="{delay:.3f}s" '
+            f'dur="{ROW_DUR:.2f}s" fill="freeze"/>'
+            f'<set attributeName="opacity" to="0.85" begin="{delay:.3f}s"/>'
+            f'<set attributeName="opacity" to="0" begin="{delay+ROW_DUR:.3f}s"/></rect>'
         )
 
-    # Cursor blocks riding each row's wipe edge
-    for i in range(len(lines)):
-        y = 6 + i * CHAR_H
-        begin = f"{i * ROW_STAGGER:.3f}s"
-        end_time = i * ROW_STAGGER + ROW_WIPE_DURATION
-        cursor_w = CURSOR_W * CHAR_W
-        parts.append(
-            f'<rect x="0" y="{y}" width="{cursor_w}" height="{CHAR_H + 1}" '
-            f'fill="#58a6ff" opacity="0.7">'
-            f'  <animate attributeName="x" '
-            f'from="0" to="{w}" '
-            f'dur="{ROW_WIPE_DURATION}s" '
-            f'begin="{begin}" fill="freeze"/>'
-            f'  <animate attributeName="opacity" '
-            f'from="0.7" to="0" '
-            f'dur="0.1s" '
-            f'begin="{end_time:.3f}s" fill="freeze"/>'
-            f'</rect>'
-        )
+    # Status bar with blinking block cursor
+    status_line_y = TITLEBAR_H + ART_H + PAD * 0.35
+    status_y = status_line_y + 19
+    parts.append(f'<line x1="0" y1="{status_line_y:.1f}" x2="{CANVAS_W}" y2="{status_line_y:.1f}" stroke="{FRAME}"/>')
+    parts.append(f'<text x="{PAD}" y="{status_y:.1f}" fill="{TITLE_TEXT}" font-size="13">'
+                 f'vachan@github:~$ whoami <tspan fill="{INK}">Vachan U S</tspan></text>')
+    status_chars = len("vachan@github:~$ whoami Vachan U S ")
+    parts.append(f'<rect x="{PAD + status_chars * 13 * 0.6:.1f}" y="{status_y-12:.1f}" width="8" height="14" fill="{INK}">'
+                 f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" '
+                 f'dur="1s" repeatCount="indefinite"/></rect>')
 
     parts.append("</svg>")
-    return "\n".join(parts)
+    return "".join(parts)
 
 
 def main():
-    src = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_INPUT
-    if not src.exists():
-        print(f"✗ Source not found: {src}")
-        print("  Run prep_photo.py first, or pass the prepped image path.")
+    if not os.path.exists(SRC):
+        print(f"[ERR] File not found: {SRC}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"-> Converting {src} to ASCII...")
-    lines = to_ascii(src)
-    svg = build_svg(lines)
-    OUT.write_text(svg, encoding="utf-8")
-    print(f"[OK] Wrote {OUT}")
+    print(f"-> Converting {SRC} to ASCII...")
+    rows = to_ascii_rows(SRC)
+    svg = build_svg(rows)
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(svg)
+    print(f"[OK] wrote {OUT}: {CANVAS_W} x {CANVAS_H}, {len(svg)//1024} KB")
 
 
 if __name__ == "__main__":

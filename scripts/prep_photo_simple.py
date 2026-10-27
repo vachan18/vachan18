@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Simplified photo prep using only Pillow + numpy (no rembg/opencv needed).
-Converts photo to high-contrast grayscale suitable for ASCII art.
+Prep photo for ASCII art conversion:
+1. Isolate background using corner color sampling.
+2. Set background to pure white (255) so it maps to spaces ' '.
+3. Enhance facial contrast for crisp ASCII definition.
 """
-
-import sys
 from pathlib import Path
+import sys
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
@@ -22,27 +23,36 @@ def prep(source: str = None):
 
     print(f"-> Reading {src}...")
     img = Image.open(src).convert("RGB")
+    arr = np.array(img, dtype=float)
 
-    # 1. Convert to grayscale
+    # Sample background color from the corners
+    bg_corners = np.concatenate([
+        arr[:50, :50].reshape(-1, 3),
+        arr[:50, -50:].reshape(-1, 3),
+        arr[-50:, :50].reshape(-1, 3),
+        arr[-50:, -50:].reshape(-1, 3)
+    ])
+    bg_col = np.median(bg_corners, axis=0)
+
+    # Calculate distance to background color
+    dist = np.linalg.norm(arr - bg_col, axis=2)
+    bg_mask = dist < 28
+
+    # Convert to grayscale
     gray = ImageOps.grayscale(img)
+    gray_arr = np.array(gray, dtype=np.uint8)
 
-    # 2. Auto-contrast to use full dynamic range
-    gray = ImageOps.autocontrast(gray, cutoff=2)
+    # Set background to pure white
+    gray_arr[bg_mask] = 255
 
-    # 3. Boost contrast further for ASCII clarity
-    enhancer = ImageEnhance.Contrast(gray)
-    gray = enhancer.enhance(1.8)
+    # Local enhancement
+    out_im = Image.fromarray(gray_arr, mode="L")
+    out_im = ImageOps.autocontrast(out_im, cutoff=1)
+    enhancer = ImageEnhance.Contrast(out_im)
+    out_im = enhancer.enhance(1.4)
+    out_im = out_im.filter(ImageFilter.SHARPEN)
 
-    # 4. Slight sharpening to preserve edges
-    gray = gray.filter(ImageFilter.SHARPEN)
-
-    # 5. Brighten the background: the blue-gray background is mid-tone,
-    #    boost brightness so it maps to spaces in ASCII
-    enhancer = ImageEnhance.Brightness(gray)
-    gray = enhancer.enhance(1.15)
-
-    # Save
-    gray.save(OUT)
+    out_im.save(OUT)
     print(f"[OK] Wrote {OUT}")
 
 

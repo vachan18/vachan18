@@ -44,7 +44,7 @@ def level_color(level: int) -> str:
 def render():
     data = json.loads(DATA.read_text())
     days = data["days"]
-    total = data["total"]
+    total = data.get("total_contributions", data.get("total", 0))
 
     # Build week columns (Sun=0 … Sat=6 in GitHub, but we remap Mon-first)
     weeks: list[list[dict | None]] = []
