@@ -1,13 +1,13 @@
 {
   "username": "vachan18",
-  "generated_at": "2026-10-30T13:09:20Z",
+  "generated_at": "2026-10-31T12:45:30Z",
   "range": {
     "start": "2025-10-26",
-    "end": "2026-10-30"
+    "end": "2026-10-31"
   },
-  "total_contributions": 172,
-  "active_days": 17,
-  "avg_per_active_day": 10.1,
+  "total_contributions": 80,
+  "active_days": 16,
+  "avg_per_active_day": 5.0,
   "current_streak": {
     "length": 4,
     "start": "2026-10-27",
@@ -19,8 +19,8 @@
     "end": "2026-10-30"
   },
   "best_day": {
-    "date": "2026-10-28",
-    "count": 71
+    "date": "2026-07-26",
+    "count": 21
   },
   "monthly": [
     {
@@ -73,7 +73,7 @@
     },
     {
       "month": "2026-10",
-      "total": 99
+      "total": 7
     }
   ],
   "days": [
@@ -785,12 +785,12 @@
     {
       "date": "2026-03-16",
       "count": 7,
-      "level": 3
+      "level": 2
     },
     {
       "date": "2026-03-17",
       "count": 4,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-03-18",
@@ -810,7 +810,7 @@
     {
       "date": "2026-03-21",
       "count": 4,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-03-22",
@@ -905,7 +905,7 @@
     {
       "date": "2026-04-09",
       "count": 5,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-04-10",
@@ -970,7 +970,7 @@
     {
       "date": "2026-04-22",
       "count": 4,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-04-23",
@@ -1090,7 +1090,7 @@
     {
       "date": "2026-05-16",
       "count": 10,
-      "level": 4
+      "level": 2
     },
     {
       "date": "2026-05-17",
@@ -1834,8 +1834,8 @@
     },
     {
       "date": "2026-10-12",
-      "count": 13,
-      "level": 4
+      "count": 0,
+      "level": 0
     },
     {
       "date": "2026-10-13",
@@ -1910,22 +1910,27 @@
     {
       "date": "2026-10-27",
       "count": 4,
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-10-28",
-      "count": 71,
-      "level": 4
+      "count": 1,
+      "level": 1
     },
     {
       "date": "2026-10-29",
-      "count": 5,
-      "level": 2
+      "count": 1,
+      "level": 1
     },
     {
       "date": "2026-10-30",
-      "count": 6,
-      "level": 2
+      "count": 1,
+      "level": 1
+    },
+    {
+      "date": "2026-10-31",
+      "count": 0,
+      "level": 0
     }
   ]
 }
