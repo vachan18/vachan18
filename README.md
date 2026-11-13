@@ -1,11 +1,11 @@
 <div align="center">
 
 <!-- ═══════════════════════════════════════════════════════════════ -->
-<!--                         VACHAN.US                               -->
-<!--                 A Developer Operating System                   -->
+<!--                         VACHAN U S                              -->
+<!--                 Software Engineer & AI Builder                  -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090F,50:17112B,100:09090F&height=190&section=header&text=VACHAN.OS&fontSize=58&fontColor=EDE9FE&fontAlignY=43&desc=THE%20DEVELOPER%20OPERATING%20SYSTEM&descSize=13&descAlignY=68&descColor=A78BFA&animation=fadeIn" width="100%" alt="Vachan OS — The Developer Operating System"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090F,50:17112B,100:09090F&height=190&section=header&text=VACHAN%20U%20S&fontSize=58&fontColor=EDE9FE&fontAlignY=43&desc=SOFTWARE%20ENGINEER%20%7C%20AI%20%26%20FULL-STACK%20DEVELOPMENT&descSize=13&descAlignY=68&descColor=A78BFA&animation=fadeIn" width="100%" alt="Vachan U S — Software Engineer"/>
 
 <br/>
 
@@ -274,7 +274,7 @@ A curated visual showcase of developer events, hands-on masterclasses, and hacka
 
 <br/><br/>
 
-**`VACHAN.OS`** &nbsp; `—` &nbsp; **BUILT WITH CURIOSITY. POWERED BY CODE.**
+**`VACHAN U S`** &nbsp; `—` &nbsp; **BUILT WITH CURIOSITY. POWERED BY CODE.**
 
 <sub>Thanks for stopping by. Explore a repository, follow the journey, or let's build something meaningful.</sub>
 
