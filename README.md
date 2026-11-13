@@ -32,41 +32,7 @@
 
 ---
 
-## `01` &nbsp; SYSTEM PROFILE & TERMINAL
-
-<div align="center">
-<table>
-  <tr>
-    <td width="50%" align="center" valign="middle">
-      <img src="./vachan-ascii.svg" width="100%" alt="ASCII Portrait Terminal" />
-    </td>
-    <td width="50%" align="center" valign="middle">
-      <img src="./stats.svg" width="100%" alt="Stats & Monthly Cadence" />
-    </td>
-  </tr>
-</table>
-</div>
-
-```yaml
-identity:
-  name: "Vachan U S"
-  role: "Software Engineer at Synapx"
-  location: "Bengaluru, India"
-
-engineering_focus:
-  - Autonomous AI Agents & Conversational Workflows
-  - Full-Stack Web Development & Cloud Systems
-  - Computer Vision (YOLOv8) & Precision Robotics
-  - LLM Integration & Workflow Automation
-
-current_mindset: "Build with purpose. Learn by shipping."
-```
-
-I'm a software engineer working at the intersection of **AI, product engineering, and full-stack development**. I build end-to-end intelligent systems — from enterprise conversational workflows and multi-agent systems to autonomous robotics and web dashboards.
-
----
-
-## `02` &nbsp; TECH STACK
+## `01` &nbsp; TECH STACK
 
 *The tools and technologies I use to design, build, and deploy.*
 
@@ -115,7 +81,7 @@ I'm a software engineer working at the intersection of **AI, product engineering
 
 ---
 
-## `03` &nbsp; FEATURED PROJECT DIRECTORY
+## `02` &nbsp; FEATURED PROJECT DIRECTORY
 
 *Selected builds across robotics, intelligent agents, and applied machine learning.*
 
@@ -214,15 +180,9 @@ A curated visual showcase of developer events, hands-on masterclasses, and hacka
 
 ---
 
-## `04` &nbsp; SYSTEM TELEMETRY
+## `03` &nbsp; SYSTEM TELEMETRY
 
 <div align="center">
-
-<a href="https://github.com/vachan18">
-  <img src="./info-card.svg" width="100%" alt="Neofetch Terminal Card" />
-</a>
-
-<br/><br/>
 
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=vachan18&show_icons=true&hide_border=true&bg_color=09090F&title_color=A78BFA&icon_color=A78BFA&text_color=D4D4D8&ring_color=A78BFA&include_all_commits=true" alt="Vachan's GitHub statistics"/>
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vachan18&layout=compact&hide_border=true&bg_color=09090F&title_color=A78BFA&text_color=D4D4D8" alt="Most used languages"/>
@@ -235,7 +195,7 @@ A curated visual showcase of developer events, hands-on masterclasses, and hacka
 
 ---
 
-## `05` &nbsp; CONTRIBUTION FLOW
+## `04` &nbsp; CONTRIBUTION FLOW
 
 <div align="center">
 
@@ -255,7 +215,7 @@ A curated visual showcase of developer events, hands-on masterclasses, and hacka
 
 ---
 
-## `06` &nbsp; ESTABLISH CONNECTION
+## `05` &nbsp; ESTABLISH CONNECTION
 
 <div align="center">
 
